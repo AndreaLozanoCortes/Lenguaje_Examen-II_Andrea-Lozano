@@ -13,25 +13,42 @@ namespace Examen_II_Andrea_Lozano.Controladores
     public class DetalleController
     {  
         DetalleView vista;
-        //TicketView vista;
         TicketDAD ticketDAD = new TicketDAD();
-        //Ticket ticket = new Ticket();
+        TipoDAD tipoDAD = new TipoDAD();
+        
 
         public DetalleController(DetalleView view)
         {
             vista = view;
-            vista.Load += new EventHandler(Load);
+            vista.Load += new EventHandler(LoadTodo);
+            //vista.Load += new EventHandler(Load1);
         }
 
-        private void Load(object sender, EventArgs e)
+        private void LoadTodo(object sender, EventArgs e)
         {
-            ListarTicket();
+            //ListarTodo();
+            vista.DetalleDataGridView1.DataSource = tipoDAD.GetTipo();
+            //vista.DetalleDataGridView1.DataSource = ticketDAD.GetTicket();
         }
 
-        private void ListarTicket()
-        {
-           vista.DetalleDataGridView1.DataSource = ticketDAD.GetTicket();
-        }
+        //private void Load1(object sender, EventArgs e)
+        //{ 
+        //    ListarTicket();
+        //}
+
+        //private void ListarTodo()
+        //{
+
+        //    vista.DetalleDataGridView1.DataSource = tipoDAD.GetTipo();
+        //    vista.DetalleDataGridView1.DataSource = ticketDAD.GetTicket();
+        //}
+
+        //private void ListarTicket()
+        //{
+        //   vista.DetalleDataGridView1.DataSource = ticketDAD.GetTicket();
+        //}
+
+       
 
 
     }

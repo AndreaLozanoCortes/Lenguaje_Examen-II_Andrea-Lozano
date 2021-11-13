@@ -53,9 +53,12 @@
     <Compile Include="Controladores\DetalleController.cs" />
     <Compile Include="Controladores\LoginController.cs" />
     <Compile Include="Controladores\TickectController.cs" />
+    <Compile Include="Controladores\TipoController.cs" />
     <Compile Include="Modelos\DAD\Conexion.cs" />
     <Compile Include="Modelos\DAD\TicketDAD.cs" />
+    <Compile Include="Modelos\DAD\TipoDAD.cs" />
     <Compile Include="Modelos\DAD\UsuarioDAD.cs" />
+    <Compile Include="Modelos\Entidades\DetalleTicket.cs" />
     <Compile Include="Modelos\Entidades\Estado.cs" />
     <Compile Include="Modelos\Entidades\Ticket.cs" />
     <Compile Include="Modelos\Entidades\Tipo.cs" />
@@ -148,6 +151,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\boleto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tarea-completada.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

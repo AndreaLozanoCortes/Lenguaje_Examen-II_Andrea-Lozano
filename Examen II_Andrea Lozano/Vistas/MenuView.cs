@@ -15,8 +15,42 @@ namespace Examen_II_Andrea_Lozano.Vistas
             InitializeComponent();
         }
 
+        TipoView vistaTipo;
+        EstadoView vistaEstado;
         TicketView vistaTicket;
         DetalleView vistaDetalle;
+
+        //Vista Tipo
+        private void TipoToolStripButton_Click(object sender, EventArgs e)
+        {
+            if (vistaTipo == null)
+            {
+                vistaTipo = new TipoView();
+                vistaTipo.MdiParent = this;
+                vistaTipo.FormClosed += Vista_FormClosed;
+                vistaTipo.Show();
+            }
+            else
+            {
+                vistaTipo.Activate();
+            }
+        }
+
+        //Vista Estado
+        private void EstadoToolStripButton_Click(object sender, EventArgs e)
+        {
+            if (vistaEstado == null)
+            {
+                vistaEstado = new EstadoView();
+                vistaEstado.MdiParent = this;
+                vistaEstado.FormClosed += Vista_FormClosed;
+                vistaEstado.Show();
+            }
+            else
+            {
+                vistaEstado.Activate();
+            }
+        }
 
         //Vista Ticket
         private void toolStripEx3_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -35,13 +69,13 @@ namespace Examen_II_Andrea_Lozano.Vistas
         }
 
         //Vista Detalle
-        private void toolStripTabItem4_Click(object sender, EventArgs e)
+        private void DetalleToolStripButton_Click(object sender, EventArgs e)
         {
             if (vistaDetalle == null)
             {
                 vistaDetalle = new DetalleView();
                 vistaDetalle.MdiParent = this;
-                vistaDetalle.FormClosed += Vista_FormClosed1;
+                vistaDetalle.FormClosed += Vista_FormClosed;
                 vistaDetalle.Show();
             }
             else
@@ -50,15 +84,15 @@ namespace Examen_II_Andrea_Lozano.Vistas
             }
         }
 
-        private void Vista_FormClosed(object sender, FormClosedEventArgs e)
+            private void Vista_FormClosed(object sender, FormClosedEventArgs e)
         {
+            vistaTipo = null;
+            vistaEstado = null;
             vistaTicket = null;
-        }
-
-        private void Vista_FormClosed1(object sender, FormClosedEventArgs e)
-        {
             vistaDetalle = null;
         }
+
+       
     }
     }
 

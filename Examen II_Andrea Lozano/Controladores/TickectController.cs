@@ -15,6 +15,7 @@ namespace Examen_II_Andrea_Lozano.Controladores
         TicketView vista;
         TicketDAD ticketDAD = new TicketDAD();
         Ticket ticket = new Ticket();
+        //DetalleTicket ticket = new DetalleTicket();
         string operacion = string.Empty;
         public TickectController(TicketView  view)
         {

@@ -44,11 +44,10 @@ namespace Examen_II_Andrea_Lozano.Vistas
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 23);
             this.btn_Limpiar.TabIndex = 11;
             this.btn_Limpiar.Text = "Limpiar";
-            this.btn_Limpiar.UseVisualStyleBackColor = true;
-            // 
+            this.btn_Limpiar.UseVisualStyleBackColor = true;            // 
             // btn_Agregar
             // 
-            this.btn_Agregar.Location = new System.Drawing.Point(68, 132);
+            this.btn_Agregar.Location = new System.Drawing.Point(90, 132);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(75, 23);
             this.btn_Agregar.TabIndex = 10;
@@ -102,6 +101,7 @@ namespace Examen_II_Andrea_Lozano.Vistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(369, 198);
             this.Controls.Add(this.btn_Limpiar);
             this.Controls.Add(this.btn_Agregar);

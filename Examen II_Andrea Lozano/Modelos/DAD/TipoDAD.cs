@@ -9,30 +9,24 @@ using System.Threading.Tasks;
 
 namespace Examen_II_Andrea_Lozano.Modelos.DAD
 {
-    public class TicketDAD: Conexion
+    public class TipoDAD : Conexion
     {
         SqlCommand comando = new SqlCommand();
 
-        //public bool InsertarNuevoCliente(DetalleTicket ticket)
-        public bool InsertarNuevoCliente(Ticket ticket)
+        public bool InsertarTipo(Tipo tipo)
         {
             bool inserto = false;
             try
             {
                 StringBuilder sql = new StringBuilder();
-                //sql.Append(" INSERT INTO DETALLE_TICKET");
-                sql.Append(" INSERT INTO TICKET_CLIENTE");
-                //sql.Append(" VALUES (@TipoSoprote, @EstadoTicket, @Identidad, @Nombre, @Email, @Direccion); ");
-                sql.Append(" VALUES (@Identidad, @Nombre, @Email, @Direccion); ");
+                sql.Append(" INSERT INTO TIPO_SOPORTE");
+                sql.Append(" VALUES (@TipoSoporte); ");
 
                 comando.Connection = MiConexion;
                 MiConexion.Open();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = sql.ToString();
-                comando.Parameters.Add("@Identidad", SqlDbType.NVarChar, 50).Value = ticket.Identidad;
-                comando.Parameters.Add("@Nombre", SqlDbType.NVarChar, 50).Value = ticket.Nombre;
-                comando.Parameters.Add("@Email", SqlDbType.NVarChar, 50).Value = ticket.Email;
-                comando.Parameters.Add("@Direccion", SqlDbType.NVarChar, 100).Value = ticket.Direccion;
+                comando.Parameters.Add("@TipoSoporte", SqlDbType.NVarChar, 50).Value = tipo.TipoSoporte;
                 comando.ExecuteNonQuery();
                 inserto = true;
                 MiConexion.Close();
@@ -44,14 +38,13 @@ namespace Examen_II_Andrea_Lozano.Modelos.DAD
             return inserto;
         }
 
-        public DataTable GetTicket()
+        public DataTable GetTipo()
         {
             DataTable dt = new DataTable();
             try
             {
                 StringBuilder sql = new StringBuilder();
-                //sql.Append(" SELECT * FROM DETALLE_TICKET");
-                sql.Append(" SELECT * FROM TICKET_CLIENTE");
+                sql.Append(" SELECT * FROM TIPO_SOPORTE");
 
                 comando.Connection = MiConexion;
                 MiConexion.Open();
@@ -67,7 +60,16 @@ namespace Examen_II_Andrea_Lozano.Modelos.DAD
             return dt;
         }
 
+
+
+
+
+
+
+
+
+
+
+
     }
-
-
 }

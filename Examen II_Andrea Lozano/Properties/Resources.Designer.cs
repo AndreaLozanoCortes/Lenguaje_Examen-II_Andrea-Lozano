@@ -89,5 +89,15 @@ namespace Examen_II_Andrea_Lozano.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tarea_completada {
+            get {
+                object obj = ResourceManager.GetObject("tarea-completada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
