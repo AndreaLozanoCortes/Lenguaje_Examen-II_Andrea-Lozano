@@ -82,7 +82,7 @@ namespace Examen_II_Andrea_Lozano.Vistas
             this.ribbonControlAdv1.QuickPanelVisible = false;
             this.ribbonControlAdv1.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.ribbonControlAdv1.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
-            this.ribbonControlAdv1.SelectedTab = this.toolStripTabItem;
+            this.ribbonControlAdv1.SelectedTab = this.toolStripTabItem1;
             this.ribbonControlAdv1.ShowRibbonDisplayOptionButton = true;
             this.ribbonControlAdv1.Size = new System.Drawing.Size(839, 126);
             this.ribbonControlAdv1.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -169,7 +169,7 @@ namespace Examen_II_Andrea_Lozano.Vistas
             this.toolStripEx2.Office12Mode = false;
             this.toolStripEx2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx2.Size = new System.Drawing.Size(179, 60);
+            this.toolStripEx2.Size = new System.Drawing.Size(148, 60);
             this.toolStripEx2.TabIndex = 0;
             // 
             // EstadoToolStripButton
@@ -288,6 +288,7 @@ namespace Examen_II_Andrea_Lozano.Vistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CaptionAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ClientSize = new System.Drawing.Size(839, 335);
             this.Controls.Add(this.ribbonControlAdv1);
             this.Cursor = System.Windows.Forms.Cursors.Default;

@@ -14,14 +14,11 @@ namespace Examen_II_Andrea_Lozano.Controladores
     public class LoginController
     {
         LoginView vista;
-
         public LoginController(LoginView view)
         {
             vista = view;
-
             vista.btn_Aceptar.Click += new EventHandler(ValidarUsuario);
         }
-
         private void ValidarUsuario(object serder, EventArgs e)
         {
             bool esValido = false;
@@ -52,7 +49,6 @@ namespace Examen_II_Andrea_Lozano.Controladores
                 MessageBox.Show("Usuario Incorrecto");
             }
         }
-
         public static string EncriptarClave(string str)
         {
             string cadena = str + "ClaveSecretaEscondida";

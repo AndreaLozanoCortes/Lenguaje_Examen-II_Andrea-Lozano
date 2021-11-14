@@ -17,6 +17,8 @@ namespace Examen_II_Andrea_Lozano.Vistas
         {
             InitializeComponent();
             DetalleController controlador = new DetalleController(this);
+            
         }
+
     }
 }

@@ -13,16 +13,13 @@ namespace Examen_II_Andrea_Lozano.Modelos.DAD
     {
         SqlCommand comando = new SqlCommand();
 
-        //public bool InsertarNuevoCliente(DetalleTicket ticket)
         public bool InsertarNuevoCliente(Ticket ticket)
         {
             bool inserto = false;
             try
             {
                 StringBuilder sql = new StringBuilder();
-                //sql.Append(" INSERT INTO DETALLE_TICKET");
                 sql.Append(" INSERT INTO TICKET_CLIENTE");
-                //sql.Append(" VALUES (@TipoSoprote, @EstadoTicket, @Identidad, @Nombre, @Email, @Direccion); ");
                 sql.Append(" VALUES (@Identidad, @Nombre, @Email, @Direccion); ");
 
                 comando.Connection = MiConexion;
@@ -50,7 +47,6 @@ namespace Examen_II_Andrea_Lozano.Modelos.DAD
             try
             {
                 StringBuilder sql = new StringBuilder();
-                //sql.Append(" SELECT * FROM DETALLE_TICKET");
                 sql.Append(" SELECT * FROM TICKET_CLIENTE");
 
                 comando.Connection = MiConexion;

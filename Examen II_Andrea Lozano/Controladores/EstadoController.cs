@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace Examen_II_Andrea_Lozano.Controladores
 {
-    public class TipoController
+    public class EstadoController
     {
-        TipoView vista;
-        TipoDAD tipoDAD = new TipoDAD();
-        Tipo tipo = new Tipo();
+        EstadoView vista;
+        EstadoDAD estadoDAD = new EstadoDAD();
+        Estado estado = new Estado();
         string operacion = string.Empty;
-        public TipoController(TipoView view)
+        public EstadoController(EstadoView view)
         {
             vista = view;
             vista.btn_Nuevo.Click += new EventHandler(Nuevo);
@@ -28,12 +28,12 @@ namespace Examen_II_Andrea_Lozano.Controladores
         }
         private void Load(object sender, EventArgs e)
         {
-            ListarTipo();
+            ListarEstado();
         }
-        private void ListarTipo()
+        private void ListarEstado()
         {
 
-            tipoDAD.GetTipo();
+            estadoDAD.GetEstado();
         }
         private void Nuevo(object serder, EventArgs e)
         {
@@ -44,17 +44,17 @@ namespace Examen_II_Andrea_Lozano.Controladores
         {
             DesabilitarControles();
             LimpiarControles();
-            tipo = null;
+            estado = null;
         }
         private void Modificar(object sender, EventArgs e)
         {
-            //if (vista.DetalleDataGridView.SelectedRows.Count > 0)
+            //if (vista.Detalle1DataGridView.SelectedRows.Count > 0)
             //{
             //    operacion = "Modificar";
             //    HabilitarControles();
 
-            //    //vista.txt_IdTipoSoporte.Text = vista.DetalleDataGridView.CurrentRow.Cells["IDTIPOSOPORTE"].Value.ToString();
-            //    //vista.cb_TipoSoporte.Text = vista.DetalleDataGridView.CurrentRow.Cells["TIPOSOPORTE"].Value.ToString();
+                //vista.txt_IdEstado.Text = vista.Detalle1DataGridView.CurrentRow.Cells["IDESTADOTICKET"].Value.ToString();
+                //vista.cb_Estado.Text = vista.Detalle1DataGridView.CurrentRow.Cells["ESTADOTICKET"].Value.ToString();
             //}
             //else
             //{
@@ -64,90 +64,91 @@ namespace Examen_II_Andrea_Lozano.Controladores
         }
         private void Eliminar(object sender, EventArgs e)
         {
-            //if (vista.DetalleDataGridView.SelectedRows.Count > 0)
+            //if (vista.Detalle1DataGridView.SelectedRows.Count > 0)
             //{
-            //    bool elimino = tipoDAD.EliminarTipo(Convert.ToInt32(vista.DetalleDataGridView.CurrentRow.Cells["IDTIPOSOPORTE"].Value));
+               //bool elimino = estadoDAD.EliminarEstado(Convert.ToInt32(vista.Detalle1DataGridView.CurrentRow.Cells["IDESTADOTICKET"].Value));
             //    if (elimino)
             //    {
-            //        MessageBox.Show("Tipo de Soporte Eliminado Exitosamente", "Atención", MessageBoxButtons.OK,
+            //        MessageBox.Show("Estado Eliminado Exitosamente", "Atención", MessageBoxButtons.OK,
             //                        MessageBoxIcon.Information);
-            //        //ListarTipo();
+            //        //ListarEstado();
             //    }
             //}
             //else
             //{
-            //    MessageBox.Show("No se pudo Eliminar el Tipo de Soporte", "Atención", MessageBoxButtons.OK,
+            //    MessageBox.Show("No se pudo Eliminar el Estado Actual", "Atención", MessageBoxButtons.OK,
             //                         MessageBoxIcon.Error);
             //}
         }
         private void Agregar(object serder, EventArgs e)
         {
-            if (vista.cb_TipoSoporte.Text == "")
+            if (vista.cb_Estado.Text == "")
             {
-                vista.errorProvider1.SetError(vista.cb_TipoSoporte, "Selecione un tipo de servicio");
-                vista.cb_TipoSoporte.Focus();
+                vista.errorProvider1.SetError(vista.cb_Estado, "Seleccione un estado");
+                vista.cb_Estado.Focus();
                 return;
             }
 
-            tipo.TipoSoporte = vista.cb_TipoSoporte.Text;
+            estado.EstadoTicket = vista.cb_Estado.Text;
 
             if (operacion == "Nuevo")
             {
-                bool inserto = tipoDAD.InsertarTipo(tipo);
+                bool inserto = estadoDAD.InsertarEstado(estado);
 
                 if (inserto)
                 {
                     DesabilitarControles();
                     LimpiarControles();
 
-                    MessageBox.Show("Tipo de Soporte Creado Exitosamente", "Atención", MessageBoxButtons.OK,
+                    MessageBox.Show("Estado Ingresado Exitosamente", "Atención", MessageBoxButtons.OK,
                                     MessageBoxIcon.Information);
-                    //ListarTipo();
+                    //ListarEstado();
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo insertar el Tipo de Soporte", "Atención", MessageBoxButtons.OK,
+                    MessageBox.Show("No se pudo ingresar el Estado", "Atención", MessageBoxButtons.OK,
                                     MessageBoxIcon.Error);
                 }
-            } 
+            }
 
             //else if (operacion == "Modificar")
             //{
-            //    tipo.IdTipoSoporte = Convert.ToInt32(vista.txt_IdTipoSoporte.Text);
-            //    bool modifico = tipoDAD.ActualizarTipo(tipo);
+                  //estado.IdEstadoTicket = Convert.ToInt32(vista.txt_IdEstado.Text);
+                  //bool modifico = estadoDAD.ActualizarEstado(estado);
             //    if (modifico)
             //    {
             //        DesabilitarControles();
             //        LimpiarControles();
 
-            //        MessageBox.Show("Tipo Modificado Exitosamente", "Atención", MessageBoxButtons.OK,
+            //        MessageBox.Show("Estado Modificado Exitosamente", "Atención", MessageBoxButtons.OK,
             //                        MessageBoxIcon.Information);
-            //        //ListarTipo();
+            //        //ListarEstado();
             //    }
             //    else
             //    {
-            //        MessageBox.Show("No se pudo Modificar el Tipo de Soporte", "Atención", MessageBoxButtons.OK,
+            //        MessageBox.Show("No se pudo Modificar el Estado", "Atención", MessageBoxButtons.OK,
             //                        MessageBoxIcon.Error);
             //    }
             //}
         }
         private void LimpiarControles()
         {
-            vista.cb_TipoSoporte.Text = " ";
+            vista.cb_Estado.Text = " ";
         }
         private void HabilitarControles()
         {
-            vista.cb_TipoSoporte.Enabled = true;
+            vista.cb_Estado.Enabled = true;
 
             vista.btn_Agregar.Enabled = true;
             vista.btn_Cancelar.Enabled = true;
             vista.btn_Modificar.Enabled = false;
             vista.btn_Eliminar.Enabled = false;
             vista.btn_Nuevo.Enabled = false;
+
         }
         private void DesabilitarControles()
         {
-            vista.cb_TipoSoporte.Enabled = false;
+            vista.cb_Estado.Enabled = true;
 
             vista.btn_Agregar.Enabled = false;
             vista.btn_Cancelar.Enabled = false;

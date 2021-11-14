@@ -35,13 +35,15 @@ namespace Examen_II_Andrea_Lozano.Vistas
             this.txt_Clave = new System.Windows.Forms.TextBox();
             this.btn_Aceptar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(47, 29);
+            this.label1.Location = new System.Drawing.Point(137, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 15);
             this.label1.TabIndex = 0;
@@ -51,7 +53,7 @@ namespace Examen_II_Andrea_Lozano.Vistas
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(47, 59);
+            this.label2.Location = new System.Drawing.Point(139, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 15);
             this.label2.TabIndex = 1;
@@ -59,7 +61,7 @@ namespace Examen_II_Andrea_Lozano.Vistas
             // 
             // txt_Email
             // 
-            this.txt_Email.Location = new System.Drawing.Point(109, 28);
+            this.txt_Email.Location = new System.Drawing.Point(201, 26);
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(167, 20);
             this.txt_Email.TabIndex = 2;
@@ -67,7 +69,7 @@ namespace Examen_II_Andrea_Lozano.Vistas
             // 
             // txt_Clave
             // 
-            this.txt_Clave.Location = new System.Drawing.Point(109, 58);
+            this.txt_Clave.Location = new System.Drawing.Point(201, 56);
             this.txt_Clave.Name = "txt_Clave";
             this.txt_Clave.PasswordChar = '*';
             this.txt_Clave.Size = new System.Drawing.Size(167, 20);
@@ -79,7 +81,7 @@ namespace Examen_II_Andrea_Lozano.Vistas
             this.btn_Aceptar.BackColor = System.Drawing.Color.Olive;
             this.btn_Aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Aceptar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Aceptar.Location = new System.Drawing.Point(80, 100);
+            this.btn_Aceptar.Location = new System.Drawing.Point(172, 98);
             this.btn_Aceptar.Name = "btn_Aceptar";
             this.btn_Aceptar.Size = new System.Drawing.Size(87, 29);
             this.btn_Aceptar.TabIndex = 4;
@@ -91,19 +93,30 @@ namespace Examen_II_Andrea_Lozano.Vistas
             this.btn_Cancelar.BackColor = System.Drawing.Color.Red;
             this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Cancelar.Location = new System.Drawing.Point(173, 100);
+            this.btn_Cancelar.Location = new System.Drawing.Point(265, 98);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(86, 29);
             this.btn_Cancelar.TabIndex = 5;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Examen_II_Andrea_Lozano.Properties.Resources.perfiles_de_usuario;
+            this.pictureBox1.Location = new System.Drawing.Point(26, 39);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(88, 78);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // LoginView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(335, 163);
+            this.ClientSize = new System.Drawing.Size(392, 163);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.btn_Aceptar);
             this.Controls.Add(this.txt_Clave);
@@ -111,7 +124,9 @@ namespace Examen_II_Andrea_Lozano.Vistas
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "LoginView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +140,6 @@ namespace Examen_II_Andrea_Lozano.Vistas
         public System.Windows.Forms.TextBox txt_Clave;
         public System.Windows.Forms.Button btn_Aceptar;
         public System.Windows.Forms.Button btn_Cancelar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -73,6 +73,46 @@ namespace Examen_II_Andrea_Lozano.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap detalles {
+            get {
+                object obj = ResourceManager.GetObject("detalles", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kyc {
+            get {
+                object obj = ResourceManager.GetObject("kyc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap perfiles_de_usuario {
+            get {
+                object obj = ResourceManager.GetObject("perfiles-de-usuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap procesamiento_de_datos__1_ {
+            get {
+                object obj = ResourceManager.GetObject("procesamiento-de-datos (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap proceso_de_diseno {
             get {
                 object obj = ResourceManager.GetObject("proceso-de-diseno", resourceCulture);
@@ -86,6 +126,16 @@ namespace Examen_II_Andrea_Lozano.Properties {
         internal static System.Drawing.Bitmap reparacion {
             get {
                 object obj = ResourceManager.GetObject("reparacion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sensible {
+            get {
+                object obj = ResourceManager.GetObject("sensible", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

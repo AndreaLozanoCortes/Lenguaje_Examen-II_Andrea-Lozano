@@ -15,22 +15,19 @@ namespace Examen_II_Andrea_Lozano.Controladores
         TicketView vista;
         TicketDAD ticketDAD = new TicketDAD();
         Ticket ticket = new Ticket();
-        //DetalleTicket ticket = new DetalleTicket();
         string operacion = string.Empty;
         public TickectController(TicketView  view)
         {
             vista = view;
             vista.btn_Nuevo.Click += new EventHandler(Nuevo);
             vista.btn_Agregar.Click += new EventHandler(Agregar);
+            vista.btn_Cancelar.Click += new EventHandler(Cancelar);
             vista.Load += new EventHandler(Load);
         }
-
-
         private void Load(object sender, EventArgs e)
         {
             ListarTicket();
         }
-
         private void ListarTicket()
         {
 
@@ -41,7 +38,12 @@ namespace Examen_II_Andrea_Lozano.Controladores
             HabilitarControles();
             operacion = "Nuevo";
         }
-
+        private void Cancelar(object sender, EventArgs e)
+        {
+            DesabilitarControles();
+            LimpiarControles();
+            ticket = null;
+        }
         private void Agregar(object serder, EventArgs e)
         {
             if (vista.txt_IdentidadCliente.Text == "")
@@ -95,8 +97,7 @@ namespace Examen_II_Andrea_Lozano.Controladores
             }
         }
 
-
-            private void LimpiarControles()
+        private void LimpiarControles()
         {
             vista.txt_NumCliente.Clear();
             vista.txt_IdentidadCliente.Clear();
@@ -104,8 +105,6 @@ namespace Examen_II_Andrea_Lozano.Controladores
             vista.txt_EmailCliente.Clear();
             vista.txt_DireccionCliente.Clear();
         }
-
-
         private void HabilitarControles()
         {
             vista.txt_IdentidadCliente.Enabled = true;
@@ -115,10 +114,8 @@ namespace Examen_II_Andrea_Lozano.Controladores
 
             vista.btn_Agregar.Enabled = true;
             vista.btn_Cancelar.Enabled = true;
-            vista.btn_Limpiar.Enabled = true;
             vista.btn_Nuevo.Enabled = false;
         }
-
         private void DesabilitarControles()
         {
             vista.txt_NumCliente.Enabled = false;
@@ -129,7 +126,6 @@ namespace Examen_II_Andrea_Lozano.Controladores
 
             vista.btn_Agregar.Enabled = false;
             vista.btn_Cancelar.Enabled = false;
-            vista.btn_Limpiar.Enabled = false;
             vista.btn_Nuevo.Enabled = true;
         }
     }

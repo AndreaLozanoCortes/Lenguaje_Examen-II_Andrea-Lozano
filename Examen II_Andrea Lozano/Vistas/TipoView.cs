@@ -13,6 +13,8 @@ namespace Examen_II_Andrea_Lozano.Vistas
 {
     public partial class TipoView : Form
     {
+        internal object DetalleDataGridView;
+
         public TipoView()
         {
             InitializeComponent();

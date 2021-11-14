@@ -13,40 +13,34 @@ namespace Examen_II_Andrea_Lozano.Controladores
     public class DetalleController
     {  
         DetalleView vista;
-        TicketDAD ticketDAD = new TicketDAD();
         TipoDAD tipoDAD = new TipoDAD();
-        
-
+        EstadoDAD estadoDAD = new EstadoDAD();
+        TicketDAD ticketDAD = new TicketDAD();
+ 
         public DetalleController(DetalleView view)
         {
             vista = view;
-            vista.Load += new EventHandler(LoadTodo);
-            //vista.Load += new EventHandler(Load1);
+            vista.Load += new EventHandler(Load);
         }
 
-        private void LoadTodo(object sender, EventArgs e)
+        private void Load(object sender, EventArgs e)
         {
-            //ListarTodo();
-            vista.DetalleDataGridView1.DataSource = tipoDAD.GetTipo();
-            //vista.DetalleDataGridView1.DataSource = ticketDAD.GetTicket();
+            ListarTipo();
+            ListarEstado();
+            ListarTicket();
         }
-
-        //private void Load1(object sender, EventArgs e)
-        //{ 
-        //    ListarTicket();
-        //}
-
-        //private void ListarTodo()
-        //{
-
-        //    vista.DetalleDataGridView1.DataSource = tipoDAD.GetTipo();
-        //    vista.DetalleDataGridView1.DataSource = ticketDAD.GetTicket();
-        //}
-
-        //private void ListarTicket()
-        //{
-        //   vista.DetalleDataGridView1.DataSource = ticketDAD.GetTicket();
-        //}
+        private void ListarTipo()
+        {
+            vista.DetalleDataGridView.DataSource = tipoDAD.GetTipo();
+        }
+        private void ListarEstado()
+        {
+            vista.Detalle1DataGridView.DataSource = estadoDAD.GetEstado();
+        }
+        private void ListarTicket()
+        {
+           vista.Detalle2DataGridView.DataSource = ticketDAD.GetTicket();
+        }
 
        
 

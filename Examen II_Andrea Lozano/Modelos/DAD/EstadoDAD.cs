@@ -9,24 +9,24 @@ using System.Threading.Tasks;
 
 namespace Examen_II_Andrea_Lozano.Modelos.DAD
 {
-    public class TipoDAD : Conexion
+    public class EstadoDAD : Conexion
     {
         SqlCommand comando = new SqlCommand();
 
-        public bool InsertarTipo(Tipo tipo)
+        public bool InsertarEstado(Estado estado)
         {
             bool inserto = false;
             try
             {
                 StringBuilder sql = new StringBuilder();
-                sql.Append(" INSERT INTO TIPO_SOPORTE");
-                sql.Append(" VALUES (@TipoSoporte); ");
+                sql.Append(" INSERT INTO ESTADO_TICKET");
+                sql.Append(" VALUES (@EstadoTicket); ");
 
                 comando.Connection = MiConexion;
                 MiConexion.Open();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = sql.ToString();
-                comando.Parameters.Add("@TipoSoporte", SqlDbType.NVarChar, 50).Value = tipo.TipoSoporte;
+                comando.Parameters.Add("@EstadoTicket", SqlDbType.NVarChar, 50).Value = estado.EstadoTicket;
                 comando.ExecuteNonQuery();
                 inserto = true;
                 MiConexion.Close();
@@ -38,13 +38,13 @@ namespace Examen_II_Andrea_Lozano.Modelos.DAD
             return inserto;
         }
 
-        public DataTable GetTipo()
+        public DataTable GetEstado()
         {
             DataTable dt = new DataTable();
             try
             {
                 StringBuilder sql = new StringBuilder();
-                sql.Append(" SELECT * FROM TIPO_SOPORTE");
+                sql.Append(" SELECT * FROM ESTADO_TICKET");
 
                 comando.Connection = MiConexion;
                 MiConexion.Open();
@@ -60,22 +60,22 @@ namespace Examen_II_Andrea_Lozano.Modelos.DAD
             return dt;
         }
 
-        public bool ActualizarTipo(Tipo tipo)
+        public bool ActualizarEstado(Estado estado)
         {
             bool modifico = false;
             try
             {
                 StringBuilder sql = new StringBuilder();
-                sql.Append(" UPDATE TIPO_SOPORTE");
-                sql.Append(" SET TIPOSOPORTE = (@TipoSoporte); ");
-                sql.Append(" WHERE IDTIPOSOPORTE = (@Id); ");
+                sql.Append(" UPDATE ESTADO_TICKET");
+                sql.Append(" SET ESTADOTICKET = (@EstadoTicket); ");
+                sql.Append(" WHERE IDESTADOTICKET = (@IdEstadoTicket); ");
 
                 comando.Connection = MiConexion;
                 MiConexion.Open();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = sql.ToString();
-                comando.Parameters.Add("@Id", SqlDbType.Int).Value = tipo.IdTipoSoporte;
-                comando.Parameters.Add("@TipoSoporte", SqlDbType.NVarChar, 50).Value = tipo.TipoSoporte;
+                comando.Parameters.Add("@IdEstadoTicket", SqlDbType.Int).Value = estado.IdEstadoTicket;
+                comando.Parameters.Add("@EstadoTicket", SqlDbType.NVarChar, 50).Value = estado.EstadoTicket;
                 comando.ExecuteNonQuery();
                 modifico = true;
                 MiConexion.Close();
@@ -87,20 +87,20 @@ namespace Examen_II_Andrea_Lozano.Modelos.DAD
             return modifico;
         }
 
-        public bool EliminarTipo(int id)
+        public bool EliminarEstado(int id)
         {
             bool modifico = false;
             try
             {
                 StringBuilder sql = new StringBuilder();
-                sql.Append(" DELETE FROM TIPO_SOPORTE");
-                sql.Append(" WHERE IDTIPOSOPORTE = (@Id); ");
+                sql.Append(" DELETE FROM ESTADO_TICKET");
+                sql.Append(" WHERE IDESTADOTICKET = (@IdEstadoTicket); ");
 
                 comando.Connection = MiConexion;
                 MiConexion.Open();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = sql.ToString();
-                comando.Parameters.Add("@Id", SqlDbType.Int).Value = id;
+                comando.Parameters.Add("@IdEstadoTicket", SqlDbType.Int).Value = id;
                 comando.ExecuteNonQuery();
                 modifico = true;
                 MiConexion.Close();

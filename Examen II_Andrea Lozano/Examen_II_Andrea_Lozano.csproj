@@ -51,10 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controladores\DetalleController.cs" />
+    <Compile Include="Controladores\EstadoController.cs" />
     <Compile Include="Controladores\LoginController.cs" />
     <Compile Include="Controladores\TickectController.cs" />
     <Compile Include="Controladores\TipoController.cs" />
     <Compile Include="Modelos\DAD\Conexion.cs" />
+    <Compile Include="Modelos\DAD\EstadoDAD.cs" />
     <Compile Include="Modelos\DAD\TicketDAD.cs" />
     <Compile Include="Modelos\DAD\TipoDAD.cs" />
     <Compile Include="Modelos\DAD\UsuarioDAD.cs" />
@@ -154,6 +156,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tarea-completada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perfiles-de-usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sensible.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\procesamiento-de-datos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\procesamiento-de-datos %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kyc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\detalles.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
